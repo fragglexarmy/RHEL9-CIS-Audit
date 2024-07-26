@@ -3,7 +3,7 @@
 
 ## Overview
 
-based on CIS 1.0.0
+based on CIS 2.0.0
 
 Ability to audit a system using a lightweight binary to check the current state.
 
