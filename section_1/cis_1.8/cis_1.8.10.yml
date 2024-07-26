@@ -1,8 +1,12 @@
-{{ if .Vars.rhel9cis_gui }}
-  {{ if .Vars.rhel9cis_rule_1_8_10 }}
+---
+
+{{ if not .Vars.rhel9cis_gui }}
+  {{ if .Vars.rhel9ciscis_level_1 }}
+    {{ if .Vars.rhel9cis_rule_1_8_10 }}
 file:
   /etc/gdm/custom.conf:
     title: 1.8.10 | Ensure XDMCP is not enabled
+    path: /etc/gdm/custom.conf
     exists: true
     contents:
     - '!/^Enable( |)=( |)true/'

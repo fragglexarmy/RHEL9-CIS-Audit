@@ -1,8 +1,12 @@
-{{ if .Vars.rhel9cis_gui }}
-  {{ if .Vars.rhel9cis_rule_1_8_8 }}
+---
+
+{{ if not .Vars.rhel9cis_gui }}
+  {{ if .Vars.rhel9ciscis_level_1 }}
+    {{ if .Vars.rhel9cis_rule_1_8_8 }}
 file:
-  /etc/dconf/db/{ .Vars.rhel9cis_dconf_db_name }.d/00-media-autorun:
+  00-media-autorun_never:
     title: 1.8.8 | Ensure GDM autorun-never is enabled
+    path: /etc/dconf/db/{ .Vars.rhel9cis_dconf_db_name }.d/00-media-autorun
     exists: true
     contents:
     - '/^[org/gnome/desktop/media-handling]/'

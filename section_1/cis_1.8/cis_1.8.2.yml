@@ -1,5 +1,8 @@
-{{ if .Vars.rhel9cis_gui }}
-  {{ if .Vars.rhel9cis_rule_1_8_2 }}
+---
+
+{{ if not .Vars.rhel9cis_gui }}
+  {{ if .Vars.rhel9ciscis_level_1 }}
+    {{ if .Vars.rhel9cis_rule_1_8_2 }}
 command:
   gdm_profile_banner:
     title: 1.8.2 | Ensure GDM login banner is configured
