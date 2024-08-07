@@ -1,7 +1,7 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
-  {{ if .Vars.rhel9ciscis_rule_1_1_2_4_2 }}
+{{ if .Vars.rhel9cis_level_1 }}
+  {{ if .Vars.rhel9cis_rule_1_1_2_4_2 }}
 mount:
   var_options:
     title: |
@@ -10,10 +10,10 @@ mount:
     mountpoint: '/var'
     exists: true
     opts:
-    {{ if .Vars.rhel9ciscis_rule_1_1_2_4_2 }}
+    {{ if .Vars.rhel9cis_rule_1_1_2_4_2 }}
     - nodev
     {{ end }}
-    {{ if .Vars.rhel9ciscis_rule_1_1_2_4_3 }}
+    {{ if .Vars.rhel9cis_rule_1_1_2_4_3 }}
     - nosuid
     {{ end }}
     meta:
@@ -38,8 +38,8 @@ file:
     exists: true
     path: /etc/fstab
     contents:
-    - '/\s\/var\s.*{{ if .Vars.rhel9ciscis_rule_1_1_2_4_2 }}nodev{{ end }}/'
-    - '/\s\/var\s.*{{ if .Vars.rhel9ciscis_rule_1_1_2_4_3 }}nosuid{{ end }}.*/'
+    - '/\s\/var\s.*{{ if .Vars.rhel9cis_rule_1_1_2_4_2 }}nodev{{ end }}/'
+    - '/\s\/var\s.*{{ if .Vars.rhel9cis_rule_1_1_2_4_3 }}nosuid{{ end }}.*/'
     meta:
       server: 1
       workstation: 1

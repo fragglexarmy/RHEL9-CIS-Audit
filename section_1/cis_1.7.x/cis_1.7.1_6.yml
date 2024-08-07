@@ -1,5 +1,5 @@
 ---
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
 file:
   {{ if .Vars.rhel9cis_rule_1_7_1 }}
   motd_config :
@@ -113,3 +113,4 @@ file:
       - AC-3
       - MP-2
   {{ end }}
+{{ end }}

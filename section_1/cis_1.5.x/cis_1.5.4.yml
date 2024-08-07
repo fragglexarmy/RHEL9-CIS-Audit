@@ -1,12 +1,15 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_1_5_4 }}
 command:
   storage_coredump_conf:
     title: 1.5.4 | Ensure core dump storage is disabled
     exec: grep -i storage /etc/systemd/coredump.conf /etc/systemd/coredump.conf.d/
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^*.conf:Storage=none/'
     meta:

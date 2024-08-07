@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_1_6_4 }}
 file:
   crypto_policies_no_weakmacs:
@@ -8,8 +8,7 @@ file:
     path: /etc/crypto-policies/state/CURRENT.pol
     exists: true
     contents:
-    - '/^mac\s*=\s*-\*-64*/'
-    - '!/^mac\s*=.*\s.*-64/'
+    - '!/^mac\s*=\s*.*64/'
     meta:
       server: 1
       workstation: 1

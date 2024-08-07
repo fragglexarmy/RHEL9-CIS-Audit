@@ -1,7 +1,7 @@
 ---
 
 {{ if not .Vars.rhel9cis_gui }}
-  {{ if .Vars.rhel9ciscis_level_1 }}
+  {{ if .Vars.rhel9cis_level_1 }}
     {{ if .Vars.rhel9cis_rule_1_8_3 }}
 command:
   gdm_last_login:
@@ -42,5 +42,6 @@ command:
       CISv8_IG1: NA
       CISv8_IG2: NA
       CISv8_IG3: NA
+    {{ end }}
   {{ end }}
 {{ end }}

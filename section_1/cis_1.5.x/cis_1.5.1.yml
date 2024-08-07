@@ -1,10 +1,11 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_1_5_1 }}
 kernel-param:
   address_space_random:
     title: 1.5.1 | Ensure address space layout randomization (ASLR) is enabled | running
+    name: kernel.randomize_va_space
     value: '2'
     meta:
       server: 1

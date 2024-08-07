@@ -1,7 +1,7 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
-  {{ if .Vars.rhel9ciscis_rule_1_1_2_1_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
+  {{ if .Vars.rhel9cis_rule_1_1_2_1_1 }}
 mount:
   tmp_options:
     title: |
@@ -11,13 +11,13 @@ mount:
     mountpoint: /tmp
     exists: true
     opts:
-    {{ if .Vars.rhel9ciscis_rule_1_1_2_1_2 }}
+    {{ if .Vars.rhel9cis_rule_1_1_2_1_2 }}
     - nodev
     {{ end }}
-    {{ if .Vars.rhel9ciscis_rule_1_1_2_1_3 }}
+    {{ if .Vars.rhel9cis_rule_1_1_2_1_3 }}
     - nosuid
     {{ end }}
-    {{ if .Vars.rhel9ciscis_rule_1_1_2_1_4 }}
+    {{ if .Vars.rhel9cis_rule_1_1_2_1_4 }}
     - noexec
     {{ end }}
     meta:
@@ -44,9 +44,9 @@ file:
     exists: true
     path: /etc/fstab
     contents:
-    - '/\s\/tmp.*{{ if .Vars.rhel9ciscis_rule_1_1_2_1_2 }}nodev{{ end }}/'
-    - '/\s\/tmp.*{{ if .Vars.rhel9ciscis_rule_1_1_2_1_3 }}nosuid{{ end }}.*/'
-    - '/\s\/tmp.*{{ if .Vars.rhel9ciscis_rule_1_1_2_1_4 }}noexec{{ end }}.*/'
+    - '/\s\/tmp.*{{ if .Vars.rhel9cis_rule_1_1_2_1_2 }}nodev{{ end }}/'
+    - '/\s\/tmp.*{{ if .Vars.rhel9cis_rule_1_1_2_1_3 }}nosuid{{ end }}.*/'
+    - '/\s\/tmp.*{{ if .Vars.rhel9cis_rule_1_1_2_1_4 }}noexec{{ end }}.*/'
     meta:
       server: 1
       workstation: 1

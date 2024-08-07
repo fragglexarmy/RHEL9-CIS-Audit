@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.run_heavy_tests }}
     {{ if .Vars.rhel9cis_rule_1_2_1_2 }}
 command:

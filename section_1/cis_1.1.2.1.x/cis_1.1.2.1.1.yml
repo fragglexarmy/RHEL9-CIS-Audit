@@ -1,7 +1,7 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
-  {{ if .Vars.rhel9ciscis_rule_1_1_2_1_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
+  {{ if .Vars.rhel9cis_rule_1_1_2_1_1 }}
 mount:
   tmp_mount:
     title: 1.1.2.1.1 | Ensure /tmp is a separate partition

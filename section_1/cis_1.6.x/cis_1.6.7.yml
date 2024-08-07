@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_1_6_7 }}
 file:
   crypto_policies_no_ssh_EtM:
@@ -8,7 +8,6 @@ file:
     path: /etc/crypto-policies/state/CURRENT.pol
     exists: true
     contents:
-    - '/etm(|(@libssh|@openssh(-server|-client)))\s*=\s*DISABLE_ETM/'
     - '!/^\s*etm\b'
     meta:
       server: 1

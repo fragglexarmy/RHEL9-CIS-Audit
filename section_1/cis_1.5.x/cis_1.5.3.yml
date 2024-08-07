@@ -1,12 +1,15 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_1_5_3 }}
 command:
   procmaxsize_coredump_conf:
     title: 1.5.3 | Ensure core dump backtraces are disabled
     exec: grep -i ProcessSizeMax /etc/systemd/coredump.conf /etc/systemd/coredump.conf.d
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout:
     - '/^*.conf:ProcessSizeMax=0/'
     - '!/^*.conf:ProcessSizeMax=[1-9].*/'

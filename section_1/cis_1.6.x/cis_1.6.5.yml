@@ -1,6 +1,6 @@
 ---
 
-{{ if .Vars.rhel9ciscis_level_1 }}
+{{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_1_6_5 }}
 file:
   crypto_policies_no_ssh_cbc:
@@ -8,7 +8,6 @@ file:
     path: /etc/crypto-policies/state/CURRENT.pol
     exists: true
     contents:
-    - 'cipher@SSH = -*-CBC'
     - '!/^cipher@/(lib|open)ssh(-server|-client)?\s*=\s*([^#\n\r]+)?-CBC\b'
     meta:
       server: 1

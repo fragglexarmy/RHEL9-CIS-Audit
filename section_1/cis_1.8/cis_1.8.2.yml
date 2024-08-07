@@ -1,7 +1,7 @@
 ---
 
 {{ if not .Vars.rhel9cis_gui }}
-  {{ if .Vars.rhel9ciscis_level_1 }}
+  {{ if .Vars.rhel9cis_level_1 }}
     {{ if .Vars.rhel9cis_rule_1_8_2 }}
 command:
   gdm_profile_banner:
@@ -44,5 +44,6 @@ command:
       CISv8_IG1: true
       CISv8_IG2: true
       CISv8_IG3: true
+    {{ end }}
   {{ end }}
 {{ end }}
