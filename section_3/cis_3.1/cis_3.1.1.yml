@@ -1,4 +1,7 @@
-{{ if .Vars.rhel9cis_rule_3_1_1 }}
+---
+
+{{ if .Vars.rhel9cis_level_1 }}
+  {{ if .Vars.rhel9cis_rule_3_1_1 }}
 command:
   {{ if not .Vars.rhel9cis_ipv6_required }}
   default_grub_ipv6:
@@ -17,6 +20,8 @@ command:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
   sysctl_ipv6_disable:
     title: 3.1.1 | Ensure IPv6 status is identified
     exec: grep disable_ipv6 /etc/sysctl.conf /etc/sysctl.d/*
@@ -36,6 +41,8 @@ command:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
   {{ end }}
   {{ if .Vars.rhel9cis_ipv6_required }}
   default_grub_ipv6:
@@ -54,6 +61,8 @@ command:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
   sysctl_ipv6_disable:
     title: 3.1.1 | Ensure IPv6 status is identified
     exec: grep disable_ipv6 /etc/sysctl.conf /etc/sysctl.d/*
@@ -73,5 +82,8 @@ command:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
+    {{ end }}
   {{ end }}
 {{ end }}

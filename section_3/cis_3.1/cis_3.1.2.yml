@@ -1,4 +1,7 @@
-{{ if .Vars.rhel9cis_rule_3_1_2 }}
+---
+
+{{ if .Vars.rhel9cis_level_1 }}
+  {{ if .Vars.rhel9cis_rule_3_1_2 }}
 command:
   wireless_disabled:
     title: 3.1.2 | Ensure wireless interfaces are disabled
@@ -15,4 +18,7 @@ command:
       CISv8_IG1: false
       CISv8_IG2: true
       CISv8_IG3: true
+      NIST800-53R5:
+      - CM-7
+  {{ end }}
 {{ end }}

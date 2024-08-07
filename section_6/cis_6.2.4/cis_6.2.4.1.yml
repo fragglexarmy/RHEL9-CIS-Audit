@@ -1,0 +1,25 @@
+---
+
+{{ if .Vars.rhel9cis_level_1 }}
+  {{ if .Vars.rhel9cis_rule_6_2_4_1 }}
+command:
+  logfile_configured:
+    title: 6.2.4.1 | Ensure permissions on all logfiles are configured
+    exec: find /var/log/ -type f -perm /g+wx,o+rwx -exec ls -l "{}" + | grep -Ev "[b,u,w]tmp.*|lastllog"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout: ['!/.*/']
+    meta:
+      server: 1
+      workstation: 1
+      CIS_ID:
+      - 6.2.4.1
+      CISv8: 3.3
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+      NIST800-53R5:
+      - AU-8
+{{ end }}
