@@ -425,12 +425,11 @@ rhel9cis_warning_banner: Authorized uses only. All activity may be monitored and
 # End Banner
 
 # aide setup via - cron, timer
-rhel9_aide_scan: cron
+rhel9cis_aide_scan: cron
 
 # 1.8 Gnome Desktop
 rhel9cis_dconf_db_name: local
-rhel922cis_screensaver_idle_delay: 900  # Set max value for idle-delay in seconds (between 1 and 900)
-rhel9cis_screensaver_lock_delay: 5  # Set max value for lock-delay in seconds (between 0 and 5)
+
 
 # Section 2
 # Service configuration
@@ -518,14 +517,6 @@ rhel9cis_is_router: false
 ## Section 3.4
 ### Firewall
 rhel9cis_firewall: firewalld
-##### firewalld
-rhel9cis_default_zone: public
-rhel9cis_firewalld_nftables_state: masked  # Note if absent removes the firewalld pkg dependancy
-#### nftables
-rhel9cis_nftables_firewalld_state: masked
-rhel9cis_nft_tables_autonewtable: true
-rhel9cis_nft_tables_tablename: filter
-rhel9cis_nft_tables_autochaincreate: true
 
 # Section 4
 
@@ -547,28 +538,24 @@ rhel9cis_syslog: journald
 
 rhel9_cis_sshd_config_file: /etc/ssh/sshd_config
 
-## 5.2.4 Note the following to understand precedence and layout
-rhel9cis_sshd_limited: false
-rhel9cis_sshd_access:
-  - AllowUser
-  - AllowGroup
-  - DenyUser
-  - DenyGroup
+## 5.1.7 Note the following to understand precedence and layout , comma seperated
+rhel9cis_sshd_allowusers: vagrant
+rhel9cis_sshd_allowgroups:
+rhel9cis_sshd_denyusers: nobody
+rhel9cis_sshd_denygroups:
 
-## 5.3.2 & 5.4.2 Enable automation to select custom profile options, using the settings above
+## 5.3.2.1 Enable automation to create custom profile settings, using the setings above
+rhel9cis_authselect_custom_profile_create: false
+
+## 5.3.2.1 Enable automation to select custom profile options, using the settings above
 rhel9cis_authselect_custom_profile_select: false
 
-## 5.3.2 Authselect select false if using AD or RHEL ID mgmt
-rhel9cis_authselect:
-  custom_profile_name: custom-profile
-  default_file_to_copy: sssd
+## 5.3.2.1 Authselect select false if using AD or RHEL ID mgmt
+rhel9cis_authselect_custom_profile_name: mpg_cis
 
 ## 5.3.3.2.3 Set option used for password complexity
 # either mincall or credits - enabling to check for one option in settings
-rhel9cis_password_complex_option: minclass
-
-## 5.4.1 Enable automation to create custom profile settings, using the setings above
-rhel9cis_authselect_custom_profile_create: false
+rhel9cis_passwd_complex_option: minclass
 
 # 5.5.1
 ## PAM
@@ -581,11 +568,10 @@ rhel9cis_pam_passwd_retry: "3"
 rhel9cis_pwhistory_so: "14"
 rhel9cis_passwd_remember: "5"
 
-## 5.6.x login.defs password settings
-rhel9cis_pass:
-  max_days: "365"
-  min_days: "1"
-  warn_age: "7"
+## 5.4.1.x login.defs password settings
+rhel9cis_pass_max_days: "365"
+rhel9cis_pass_min_days: "1"
+rhel9cis_pass_warn_age: "7"
 
 ## 5.3.7 set sugroup if differs from wheel
 rhel9cis_sugroup: sugroup

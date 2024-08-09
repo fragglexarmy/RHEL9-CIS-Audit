@@ -3,7 +3,7 @@
 {{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_config_aide }}
     {{ if .Vars.rhel9cis_rule_6_1_2 }}
-      {{ if eq .Vars.rhel9_aide_scan "cron" }}
+      {{ if eq .Vars.rhel9cis_aide_scan "cron" }}
 command:
   aide_cron:
     title: 6.1.2 | Ensure filesystem integrity is regularly checked
@@ -29,7 +29,7 @@ command:
       - AU-2
 # Can be enabled if using timer and service files
 service:
-    {{ if eq .Vars.rhel9_aide_scan "timer" }}
+    {{ if eq .Vars.rhel9cis_aide_scan "timer" }}
   aidecheck:
     title: 6.1.2 | Ensure filesystem integrity is regularly checked
     enabled: true

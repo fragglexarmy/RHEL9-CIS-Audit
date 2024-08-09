@@ -11,12 +11,12 @@ command:
       - 0
       - 1
     stdout:
-    {{ if eq .Vars.rhel9cis_password_complex_option "minclass" }}
+    {{ if eq .Vars.rhel9cis_passwd_complex_option "minclass" }}
       - '/.*\:minclass\s*=\s*([4-9]|[1-9][0-9])/'
       - '!/.*\:minclass\s*=\s*[0-3]/'
       - '!/.*\:(d|l|o|u)credit/'
     {{ end }}
-    {{ if eq .Vars.rhel9cis_password_complex_option "credits" }}
+    {{ if eq .Vars.rhel9cis_passwd_complex_option "credits" }}
       - '/.*\:dcredit\s*=\s*-\d/'
       - '/.*\:lcredit\s*=\s*-\d/'
       - '/.*\:ocredit\s*=\s*-\d/'
