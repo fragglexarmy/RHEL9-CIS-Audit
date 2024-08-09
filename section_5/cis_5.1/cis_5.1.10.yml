@@ -8,8 +8,8 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - '/^disableforwarding yes/'
-    - '!/^disableforwarding no/'
+    - '/^(?i)disableforwarding yes/'
+    - '!/^(?i)disableforwarding no/'
     meta:
       server: 2
       workstation: 1

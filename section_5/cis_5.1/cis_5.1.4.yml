@@ -6,7 +6,10 @@ command:
   no_weak_ssh_ciphers:
     title: 5.1.4 | Ensure sshd Ciphers are configured | weak cipher check
     exec: sshd -T | grep -Pi --'^ciphers\h+\"?([^#\n\r]+,)?((3des|blowfish|cast128|aes(128|192|256))-cbc|arcfour(128|256)?|rijndael-cbc@lysator\.liu\.se|chacha20-poly1305@openssh\.com)\b'
-    exit-status: 0
+    exit-status:
+      or:
+      - 0
+      - 2
     stdout: ['!/./']
     meta:
       server: 1

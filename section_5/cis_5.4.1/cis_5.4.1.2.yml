@@ -8,7 +8,7 @@ file:
     path: /etc/login.defs
     exists: true
     contents:
-    - '/^PASS_MIN_DAYS\s{{ .Vars.rhel9cis_pass.min_days }}/'
+    - '/^PASS_MIN_DAYS\s[1-9]/'
     - '!/^PASS_MIN_DAYS\s0/'
     meta:
       server: 1

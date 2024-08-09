@@ -8,8 +8,8 @@ file:
     path: /etc/ssh/sshd_config
     exists: true
     contents:
-    - '/^gssapiauthentication no/'
-    - '!/^gssapiauthentication yes/'
+    - '/^(?i)gssapiauthentication no/'
+    - '!/^(?i)gssapiauthentication yes/'
     meta:
       server: 2
       workstation: 1
@@ -27,15 +27,15 @@ file:
       - IA-5
 command:
   ssh_gssapi_live:
-    title: 5.1.10 | Ensure sshd GSSAPIAuthentication is disabled | live
-    exec: sshd -T | grep gssapiauthentication
+    title: 5.1.11 | Ensure sshd GSSAPIAuthentication is disabled | live
+    exec: sshd -T | grep -i gssapiauthentication
     exit-status:
       or:
       - 0
       - 1
     stdout:
-    - '/^disableforwarding yes/'
-    - '!/^disableforwarding no/'
+    - '/^gssapiauthentication no/'
+    - '!/^gssapiauthentication yes/'
     meta:
       server: 2
       workstation: 1

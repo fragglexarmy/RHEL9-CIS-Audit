@@ -5,7 +5,7 @@
 file:
   pam_unix_remember_password-auth:
     title: 5.3.3.4.2 | Ensure pam_unix does not include remember | password-auth
-    file: /etc/pam.d/password-auth
+    path: /etc/pam.d/password-auth
     exists: true
     contents:
     - '!/.*pam_unix.so.*remember/'
@@ -21,7 +21,7 @@ file:
       NIST800-53R5: IA-5
   pam_unix_remember_system-auth:
     title: 5.3.3.4.2 | Ensure pam_unix does not include remember | system-auth
-    file: /etc/pam.d/system-auth
+    path: /etc/pam.d/system-auth
     exists: true
     contents:
     - '!/.*pam_unix.so.*remember/'

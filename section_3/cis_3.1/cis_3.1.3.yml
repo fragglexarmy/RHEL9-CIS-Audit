@@ -2,7 +2,7 @@
 
 {{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_3_1_3 }}
-    {{ if not .Vars.rhel9cis_bluetooth_server }}
+    {{ if not .Vars.rhel9cis_bluetooth_service }}
       {{ if not .Vars.rhel9cis_bluetooth_mask }}
 package:
   bluetooth_pkg:

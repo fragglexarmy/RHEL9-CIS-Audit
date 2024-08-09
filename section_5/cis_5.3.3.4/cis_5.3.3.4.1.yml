@@ -5,7 +5,7 @@
 file:
   pam_unix_nullok_password-auth:
     title: 5.3.3.4.1 | Ensure pam_unix does not include nullok | password-auth
-    file: /etc/pam.d/password-auth
+    path: /etc/pam.d/password-auth
     exists: true
     contents:
     - '!/.*pam_unix.so.*nullok/'
@@ -21,7 +21,7 @@ file:
       NIST800-53R5: IA-5
   pam_unix_nullok_system-auth:
     title: 5.3.3.4.1 | Ensure pam_unix does not include nullok | system-auth
-    file: /etc/pam.d/system-auth
+    path: /etc/pam.d/system-auth
     exists: true
     contents:
     - '!/.*pam_unix.so.*nullok/'

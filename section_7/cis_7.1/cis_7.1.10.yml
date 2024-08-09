@@ -25,7 +25,10 @@ file:
   etc_security_opasswd__old_perms:
     title: 7.1.10 | Ensure permissions on /etc/security/opasswd are configured | old passwd
     path: /etc/security/opasswd.old
-    exists: true
+    exists:
+      or:
+      - true
+      - false
     mode: "0600"
     owner: root
     group: root

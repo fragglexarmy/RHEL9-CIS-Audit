@@ -26,7 +26,10 @@ command:
   passwd_change_not_pamd:
     title: 5.3.3.2.1 | Ensure password number of changed characters is configured
     exec: grep -Psi -- '^\s*password\s+(requisite|required|sufficient)\s+pam_pwquality\.so\s+([^#\n\r]+\s+)?difok\s*=\s*([0-1])\b' /etc/pam.d/system-auth /etc/pam.d/password-auth
-    exists: true
+    exit-status:
+      or:
+      - 0
+      - 1
     stdout:
     - '!/.*/'
     meta:

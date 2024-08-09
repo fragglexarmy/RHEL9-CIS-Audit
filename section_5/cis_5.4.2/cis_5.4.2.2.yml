@@ -9,7 +9,7 @@ command:
     exit-status: 0
     stdout:
     - 'root'
-    - '!/[^root]/'
+    - '/[^root]/'
     meta:
       server: 1
       workstation: 1

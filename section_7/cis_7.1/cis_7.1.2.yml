@@ -7,7 +7,12 @@ file:
     title: 7.1.2 | Ensure permissions on /etc/passwd- are configured
     path: /etc/passwd-
     exists: true
-    mode: "0744"
+    mode:
+      or:
+      - '0644'
+      - '0640'
+      - '0600'
+      - '0400'
     owner: root
     group: root
     meta:

@@ -7,7 +7,12 @@ file:
     title: 7.1.4 | Ensure permissions on /etc/group- are configured
     path: /etc/group-
     exists: true
-    mode: "0744"
+    mode:
+      or:
+      - '0644'
+      - '0640'
+      - '0600'
+      - '0400'
     owner: root
     group: root
     meta:
