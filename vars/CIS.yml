@@ -9,7 +9,7 @@ host_os_distribution: RedHat
 
 
 #  timeout for each command to run where set - default = 10seconds/10000ms
-timeout_ms: 60000
+timeout_ms: 120000
 
 # Taken from LE rhel9-cis
 rhel9cis_section1: true
@@ -23,7 +23,7 @@ rhel9cis_section7: true
 rhel9cis_level_1: true
 rhel9cis_level_2: true
 
-rhel9cis_selinux_disable: true
+rhel9cis_selinux_disable: false
 
 #  to enable rules that may have IO impact on a system e.g. full filesystem scans or CPU heavy
 run_heavy_tests: true
@@ -548,8 +548,6 @@ rhel9cis_pass_warn_age: "7"
 # Section 6
 
 # Control 6.1.x
-# AIDE
-rhel9cis_config_aide: false
 
 # aide setup via - cron, timer
 rhel9cis_aide_scan: cron

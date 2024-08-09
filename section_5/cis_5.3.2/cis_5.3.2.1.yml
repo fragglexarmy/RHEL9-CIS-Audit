@@ -1,8 +1,7 @@
 ---
 
 {{ if .Vars.rhel9cis_level_1 }}
-  {{ if .Vars.rhel9cis_authselect_custom_profile_create }}
-    {{ if .Vars.rhel9cis_rule_5_3_2_1 }}
+  {{ if .Vars.rhel9cis_rule_5_3_2_1 }}
 file:
   passwd_auth_authselect_modules:
     title: 5.3.2.1 | Ensure active authselect profile includes pam modules
@@ -52,6 +51,5 @@ file:
       CISv8_IG2: true
       CISv8_IG3: true
       NIST800-53R5: NA
-    {{ end }}
   {{ end }}
 {{ end }}

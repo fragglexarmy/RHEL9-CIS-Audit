@@ -1,9 +1,8 @@
 ---
 
 {{ if .Vars.rhel9cis_level_1 }}
-  {{ if .Vars.rhel9cis_config_aide }}
-    {{ if .Vars.rhel9cis_rule_6_1_2 }}
-      {{ if eq .Vars.rhel9cis_aide_scan "cron" }}
+  {{ if .Vars.rhel9cis_rule_6_1_2 }}
+    {{ if eq .Vars.rhel9cis_aide_scan "cron" }}
 command:
   aide_cron:
     title: 6.1.2 | Ensure filesystem integrity is regularly checked
@@ -64,7 +63,6 @@ service:
       CISv8_IG3: true
       NIST800-53R5:
       - AU-2
-      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
