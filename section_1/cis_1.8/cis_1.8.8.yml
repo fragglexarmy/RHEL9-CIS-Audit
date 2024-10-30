@@ -6,7 +6,7 @@
 file:
   00-media-autorun_never:
     title: 1.8.8 | Ensure GDM autorun-never is enabled
-    path: /etc/dconf/db/{ .Vars.rhel9cis_dconf_db_name }.d/00-media-autorun
+    path: /etc/dconf/db/{{ .Vars.rhel9cis_dconf_db_name }}.d/00-media-autorun
     exists: true
     contents:
     - '/^[org/gnome/desktop/media-handling]/'

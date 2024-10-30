@@ -6,7 +6,7 @@
 file:
   00-autorun_lock_never:
     title: 1.8.9 | Ensure GDM autorun-never is not overridden
-    path: /etc/dconf/db/{ .Vars.rhel9cis_dconf_db_name }.d/locks/00-autorun_lock
+    path: /etc/dconf/db/{{ .Vars.rhel9cis_dconf_db_name }}.d/locks/00-autorun_lock
     exists: true
     contents:
     - '^/\/org\/gnome\/desktop\/media-handling\/autorun-never/'
