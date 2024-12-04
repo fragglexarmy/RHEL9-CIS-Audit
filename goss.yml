@@ -1,7 +1,7 @@
 gossfile:
   {{ if .Vars.rhel9cis_section1 }}
   section_1/cis_1.1.1.x/*.yml: {}
-  section_1/cis_1.1.2.1.x/*.yml: {}
+  section_1/cis_1.1.2.x/*.yml: {}
   section_1/cis_1.2.x/*.yml: {}
   section_1/cis_1.3.x/*.yml: {}
   section_1/cis_1.4.x/*.yml: {}
