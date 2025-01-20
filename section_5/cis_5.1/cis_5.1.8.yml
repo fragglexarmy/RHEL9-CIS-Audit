@@ -27,7 +27,7 @@ file:
       - IA-5
 command:
   ssh_configd_banner:
-    title: 5.3.8 | Ensure SSH warning banner configured | conf.d banner settings
+    title: 5.1.8 | Ensure SSH warning banner configured | conf.d banner settings
     exec: grep -Eis '^\s*Banner\s+"?none\b'/etc/ssh/sshd_config.d/*.conf
     exit-status:
       or:
