@@ -4,7 +4,7 @@
   {{ if .Vars.rhel9cis_rule_4_2_2 }}
 command:
   firewalld_loopback_manual:
-    title: 4.2.12 | Ensure firewalld loopback traffic is configured | Manual Check Required
+    title: 4.2.2 | Ensure firewalld loopback traffic is configured | Manual Check Required
     exec: echo "Manual test"
     exit-status: 0
     stdout:
