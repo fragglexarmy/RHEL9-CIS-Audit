@@ -2,13 +2,13 @@
 
 {{ if .Vars.rhel9cis_level_1 }}
   {{ if .Vars.rhel9cis_rule_5_3_1_1 }}
-package:
+command:
   pam_version:
     title: 5.3.1.1 | Ensure latest version of pam is installed
-    installed: true
-    name: pam
-    versions:
-      semver-constraint: ">1.5.1-18"
+    exit-status: 0
+    exec: rpm -q pam | grep -E "pam-1.5.1-(19|2)"
+    stdout:
+    - '/pam-1.5.1-(19|2)/'
     meta:
       server: 1
       workstation: 1
