@@ -10,7 +10,7 @@ file:
     contents:
     - '/auth\s+sufficient\s+pam_unix.so/'
     - '/account\s+required\s+pam_unix.so/'
-    - '/password\s+sufficient\s+pam_unix.so sha512 shadow use_authtok/'
+    - '/password\s+sufficient\s+pam_unix.so sha512 shadow ({if not "without-nullok":nullok}|) use_authtok/'
     - '/session\s+required\s+pam_unix.so/'
     meta:
       server: 1
@@ -29,7 +29,7 @@ file:
     contents:
     - '/auth\s+sufficient\s+pam_unix.so/'
     - '/account\s+required\s+pam_unix.so/'
-    - '/password\s+sufficient\s+pam_unix.so sha512 shadow use_authtok/'
+    - '/password\s+sufficient\s+pam_unix.so sha512 shadow ({if not "without-nullok":nullok}|) use_authtok/'
     - '/session\s+required\s+pam_unix.so/'
     meta:
       server: 1
