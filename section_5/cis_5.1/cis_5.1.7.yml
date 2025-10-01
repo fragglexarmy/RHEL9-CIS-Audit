@@ -11,10 +11,10 @@ command:
       - 0
       - 1
     stdout:
-    - allowusers: {{ .Vars.rhel9cis_sshd_allowusers }}
-    - allowgroups: {{ .Vars.rhel9cis_sshd_allowgroups }}
-    - denyusers: {{ .Vars.rhel9cis_sshd_denyusers }}
-    - denygroups: {{ .Vars.rhel9cis_sshd_denygroups }}
+    - '/(?i)AllowUsers: {{ .Vars.rhel9cis_sshd_allowusers }}/'
+    - '/(?i)AllowGroups: {{ .Vars.rhel9cis_sshd_allowgroups }}/'
+    - '/(?i)DenyUsers: {{ .Vars.rhel9cis_sshd_denyusers }}/'
+    - '/(?i)DenyGroups: {{ .Vars.rhel9cis_sshd_denygroups }}/'
     meta:
       server: 1
       workstation: 1
