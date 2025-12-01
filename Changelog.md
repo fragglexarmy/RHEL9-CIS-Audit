@@ -1,5 +1,12 @@
 # Changes to RHEL9-CIS-Audit
 
+
+## 1.0.6
+
+Thanks to @draygoX
+- [#71](https://github.com/ansible-lockdown/RHEL9-CIS-Audit/issues/71)
+- [#72](https://github.com/ansible-lockdown/RHEL9-CIS-Audit/issues/72)
+
 ## 1.0.5 updated to use goss > 0.4. - based on CIS v1.0.0
 
 - updated ssh config to use more file module
