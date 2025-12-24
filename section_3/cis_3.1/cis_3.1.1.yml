@@ -5,7 +5,7 @@
 command:
   {{ if not .Vars.rhel9cis_ipv6_required }}
   ipv6_disabled:
-    title: 3.1.1 | Ensure IPv6 status is identified
+    title: 3.1.1 | Ensure IPv6 status is identified | IPv6 disabled
     exec: |
       if [ `grep 1 /proc/sys/net/ipv6/conf/all/disable_ipv6` ] || [ `grep 1 /proc/sys/net/ipv6/conf/default/disable_ipv6` ] || [ `cat /sys/module/ipv6/parameters/disable` == 1 ]; \
       then \
@@ -29,7 +29,7 @@ command:
   {{ end }}
   {{ if .Vars.rhel9cis_ipv6_required }}
   ipv6_required:
-    title: 3.1.1 | Ensure IPv6 status is identified
+    title: 3.1.1 | Ensure IPv6 status is identified | IPv6 enabled
     exec: |
       if [ `grep 0 /proc/sys/net/ipv6/conf/all/disable_ipv6` ] || [ `grep 0 /proc/sys/net/ipv6/conf/default/disable_ipv6` ] || [ `cat /sys/module/ipv6/parameters/disable` == 0 ]; \
       then \
@@ -53,7 +53,7 @@ command:
     {{ end }}
     {{ if eq .Vars.rhel9cis_ipv6_disable_method "sysctl" }}
     ipv6_disabled_sysctl:
-      title: 3.1.1 | Ensure IPv6 status is identified
+      title: 3.1.1 | Ensure IPv6 status is identified | IPv6 disabled via sysctl
       exec: sysctl -w net.ipv6.conf.all.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1
       exit-status: 0
       stdout:
@@ -73,7 +73,7 @@ command:
     {{ end }}
     {{ if eq .Vars.rhel9cis_ipv6_disable_method "kernel" }}
     ipv6_disabled_kernel:
-      title: 3.1.1 | Ensure IPv6 status is identified
+      title: 3.1.1 | Ensure IPv6 status is identified | IPv6 disabled via kernel
       exec: grubby --info=ALL | grep 'ipv6.disable'
       exit-status: 0
       stdout:
