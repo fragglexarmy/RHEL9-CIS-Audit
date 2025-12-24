@@ -88,6 +88,6 @@ kernel-param:
       CISv8_IG3: true
       NIST800-53R5:
       - CM-7
-    {{ end }}
+  {{ end }}
   {{ end }}
 {{ end }}
