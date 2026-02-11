@@ -23,7 +23,7 @@ command:
       - AU-12
       - SI-5
   auditd_setfacl_live:
-    title: 6.3.3.16 |Ensure successful and unsuccessful attempts to use the setfacl command are recorded | running
+    title: 6.3.3.16 | Ensure successful and unsuccessful attempts to use the setfacl command are recorded | running
     exec: auditctl -l | grep setfacl
     exit-status: 0
     stdout:

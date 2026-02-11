@@ -24,4 +24,3 @@ command:
       - MP-2
   {{ end }}
 {{ end }}
-
