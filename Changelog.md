@@ -1,5 +1,11 @@
 # Changes to RHEL9-CIS-Audit
 
+## 1.0.7 - based on CIS v1.0.0 - Feb26 updates
+
+License date updated
+thanks to @St0ne-dot-at
+- 1.2.1.2 - fixed typo
+- 7.1.11/2/3  fixed tests
 
 ## 1.0.6
 
