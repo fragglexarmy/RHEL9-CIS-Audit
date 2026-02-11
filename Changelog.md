@@ -1,11 +1,17 @@
 # Changes to RHEL9-CIS-Audit
 
-## 1.0.6 - based on CIS v1.0.0 - Feb26 updates
+## 1.0.7 - based on CIS v1.0.0 - Feb26 updates
 
 License date updated
 thanks to @St0ne-dot-at
 - 1.2.1.2 - fixed typo
 - 7.1.11/2/3  fixed tests
+
+## 1.0.6
+
+Thanks to @draygoX
+- [#71](https://github.com/ansible-lockdown/RHEL9-CIS-Audit/issues/71)
+- [#72](https://github.com/ansible-lockdown/RHEL9-CIS-Audit/issues/72)
 
 ## 1.0.5 updated to use goss > 0.4. - based on CIS v1.0.0
 
