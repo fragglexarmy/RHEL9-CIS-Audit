@@ -22,4 +22,3 @@ command:
       NIST800-53R5: NA
   {{ end }}
 {{ end }}
-

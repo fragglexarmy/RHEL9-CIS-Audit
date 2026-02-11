@@ -26,7 +26,7 @@ file:
 command:
   ssh_loglevel_live:
     title: 5.1.15 | Ensure SSH LogLevel is appropriate | live
-    exec:  sshd -T | grep loglevel
+    exec: sshd -T | grep loglevel
     exit-status:
       or:
       - 0

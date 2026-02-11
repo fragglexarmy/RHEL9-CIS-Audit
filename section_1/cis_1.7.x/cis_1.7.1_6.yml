@@ -1,8 +1,9 @@
 ---
+
 {{ if .Vars.rhel9cis_level_1 }}
 file:
   {{ if .Vars.rhel9cis_rule_1_7_1 }}
-  motd_config :
+  motd_config:
     title: |
       1.7.1 | Ensure message of the day is configured properly
       1.7.4 | Ensure permissions on /etc/motd are configured
