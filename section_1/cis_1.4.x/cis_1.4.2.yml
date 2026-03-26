@@ -23,7 +23,7 @@ file:
       CISv8_IG3: true
       NIST800-53R5: AC-3
   grubenv_perms:
-    title: 1.4.2 | Ensure permissions on bootloader config are configured | file_perms | grubenv
+    title: 1.4.2 | Ensure access to bootloader config is configured | file_perms | grubenv
     path: /boot/grub2/grubenv
     exists: true
     owner: root
@@ -41,7 +41,7 @@ file:
       CISv8_IG3: true
       NIST800-53R5: AC-3
   grub_user_perms:
-    title: 1.4.2 | Ensure permissions on bootloader config are configured | file_perms | user.cfg
+    title: 1.4.2 | Ensure access to bootloader config is configured | file_perms | user.cfg
     path: /boot/grub2/user.cfg
     exists: true
     owner: root
