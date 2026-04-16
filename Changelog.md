@@ -1,5 +1,12 @@
 # Changes to RHEL9-CIS-Audit
 
+## 2.0.0 - March 2026 — benchmark alignment
+
+- title updates
+- level alignments
+- yaml headers
+- common files updates
+
 ## 2.0.0 - based on CIS v2.0.0 - Feb26 QA updates
 
 - README.md corrected: updated references from STIG/RHEL 7 to CIS/RHEL 9, fixed grammar and spelling

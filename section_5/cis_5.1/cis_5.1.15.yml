@@ -4,7 +4,7 @@
   {{ if .Vars.rhel9cis_rule_5_1_15 }}
 file:
   sshd_loglevel:
-    title: 5.1.15 | Ensure SSH LogLevel is appropriate | config
+    title: 5.1.15 | Ensure sshd LogLevel is configured | config
     path: /etc/ssh/sshd_config
     exists: true
     contents:
@@ -25,7 +25,7 @@ file:
       - SI-5
 command:
   ssh_loglevel_live:
-    title: 5.1.15 | Ensure SSH LogLevel is appropriate | live
+    title: 5.1.15 | Ensure sshd LogLevel is configured | live
     exec: sshd -T | grep loglevel
     exit-status:
       or:
