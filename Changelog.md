@@ -1,5 +1,9 @@
 # Changes to RHEL9-CIS-Audit
 
+## June 2026 — QA pass: LICENSE casing fix
+
+- Fixed LICENSE copyright casing: Mindpoint -> MindPoint
+
 ## 2.0.0 - March 2026 — benchmark alignment
 
 - title updates
