@@ -31,9 +31,9 @@ rhel9cis_selinux_disable: false
 run_heavy_tests: true
 
 #  True is BIOS based system else set to false
-rhel9cis_legacy_boot: true
+rhel9cis_legacy_boot: false
 
-rhel9cis_set_boot_pass: true
+rhel9cis_set_boot_pass: false
 
 # Section 1 is Initial setup (FileSystem Configuration, Configure Software Updates, Filesystem Integrity Checking, Secure Boot Settings,
 # Additional Process Hardening, Mandatory Access Control, Command Line Warning Banners, and GNOME Display Manager)
@@ -88,6 +88,7 @@ rhel9cis_rule_1_2_1_1: true
 rhel9cis_rule_1_2_1_2: true
 rhel9cis_rule_1_2_1_3: true
 rhel9cis_rule_1_2_1_4: true
+rhel9cis_enable_repogpg: true
 # Package updates
 rhel9cis_rule_1_2_2_1: true
 
@@ -453,7 +454,7 @@ rhel9cis_message_server: false  # This is for messaging dovecot and cyrus-imap
 rhel9cis_message_mask: false
 rhel9cis_nfs_server: true
 rhel9cis_nfs_mask: true
-rhel9cis_nis_server: true  # set to mask if nis client required
+rhel9cis_nis_server: false  # set to mask if nis client required
 rhel9cis_nis_mask: false
 rhel9cis_print_server: false  # replaces cups
 rhel9cis_print_mask: false

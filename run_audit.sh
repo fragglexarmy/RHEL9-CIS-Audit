@@ -85,21 +85,7 @@ fi
 
 #### Main Script ####
 
-# Discover OS version aligning with audit
-# Define os_vendor variable
-if [ "$(uname -a | grep -c amzn)" -ge 1 ]; then
-    os_vendor="AMAZON"
-elif [ "$(grep -Ec "rhel|oracle" /etc/os-release)" != 0 ]; then
-  os_vendor="RHEL"
-else
-  os_vendor="$(hostnamectl | grep Oper | cut -d : -f2 | awk '{print toupper($1)}')"
-  if [ "${os_vendor}" = "OPENSUSE" ]; then
-   os_vendor="SUSE"
-  fi
-fi
-
-os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
-audit_content_version=$os_vendor$os_maj_ver-$BENCHMARK-Audit
+audit_content_version=$BENCHMARK_OS-$BENCHMARK-Audit
 audit_content_dir=$AUDIT_CONTENT_LOCATION/$audit_content_version
 audit_vars=vars/${BENCHMARK}.yml
 
