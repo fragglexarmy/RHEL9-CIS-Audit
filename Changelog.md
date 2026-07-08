@@ -6,7 +6,10 @@
 - Added CONTRIBUTING.rst
 - Fixed NFS/RPC/NIS server defaults to match remediation role: nfs_server, rpc_server, nis_server now false (were true)
 - Added missing rhel9cis_rule_enable_repogpg toggle to vars/CIS.yml (1.2.1 GPG repo check)
-- run_audit.sh: replaced os_vendor/os_maj_ver runtime OS detection with direct BENCHMARK_OS variable
+- run_audit.sh:
+  - replaced os_vendor/os_maj_ver runtime OS detection with direct BENCHMARK_OS variable
+  - updated vars discovery
+- Updated links that the audit comes from goss-org moved to krameff
 
 ## 2.0.0 - March 2026 — benchmark alignment
 
