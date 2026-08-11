@@ -19,7 +19,7 @@ kernel-param:
       CISv8_IG3: true
 command:
   ptrace_restricted_2:
-    title: 1.5.2 | Ensure address space layout randomization (ASLR) is enabled | conf
+    title: 1.5.2 | Ensure ptrace_scope is restricted | conf
     exit-status: 0
     exec: 'grep "kernel\.yama\.ptrace_scope" /etc/sysctl.conf /etc/sysctl.d/*'
     stdout:

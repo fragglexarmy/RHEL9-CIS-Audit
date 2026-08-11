@@ -3,40 +3,38 @@
 
 ## Overview
 
-based on CIS 2.0.0
+Based on CIS 2.0.0
 
 Ability to audit a system using a lightweight binary to check the current state.
 
 This is:
 
-- very small 11MB
+- very small (16 MB)
 - lightweight
-- self contained
+- self-contained
 
-It works using a set of configuration files and directories to audit STIG of RHEL/CentOS 7 servers. These files/directories correlate to the STIG Level and STIG_ID
+It works using a set of configuration files and directories to audit CIS benchmarks of RHEL 9 servers. These files/directories correlate to the CIS level and CIS control ID.
 
 Tested on
 
-- RHEL9
-- Rocky9
+- RHEL 9
+- Rocky 9
 - AlmaLinux 9
-- Oraclelinux 9
+- Oracle Linux 9
 
 ## Requirements
 
-You must have [goss](https://github.com/goss-org/goss/) available to your host you would like to test.
+You must have [goss](https://github.com/kraemff/goss/) available on the host you would like to test.
 
-You must have sudo/root access to the system as some commands require privilege information.
+You must have sudo/root access to the system, as some commands require elevated privileges.
 
-Assuming you have already clone this repository you can run goss from where you wish.
+Assuming you have already cloned this repository, you can run goss from where you wish.
 
 Please refer to the audit documentation for usage.
 
 - [readthedocs](https://ansible-lockdown.readthedocs.io/en/latest/)
 
-This also works alongside the [Ansible Lockdown RHEL9-CIS role](https://github.com/ansible-lockdown/RHEL9-CIS)
-
-Which will:
+This also works alongside the [Ansible Lockdown RHEL9-CIS role](https://github.com/ansible-lockdown/RHEL9-CIS), which will:
 
 - install
 - audit
@@ -45,15 +43,15 @@ Which will:
 
 ## Join us
 
-On our [Discord Server](https://www.lockdownenterprise.com/discord) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
+Join us on our [Discord Server](https://www.lockdownenterprise.com/discord) to ask questions, discuss features, or just chat with other Ansible-Lockdown users.
 
-Set of configuration files and directories to run the first stages of CIS of RHEL 9 servers
+Set of configuration files and directories to run the first stages of CIS of RHEL 9 servers.
 
 This is configured in a directory structure level.
 
 Goss is run based on the goss.yml file in the top level directory. This specifies the configuration.
 
-## further information
+## Further Information
 
-- [goss documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#patterns)
+- [goss documentation](https://github.com/krameff/goss/blob/devel/docs/index.md)
 - [CIS standards](https://www.cisecurity.org)

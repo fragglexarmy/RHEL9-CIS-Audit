@@ -1,3 +1,5 @@
+---
+
 ## metadata for benchmark
 
 ## metadata for Audit benchmark
@@ -29,9 +31,9 @@ rhel9cis_selinux_disable: false
 run_heavy_tests: true
 
 #  True is BIOS based system else set to false
-rhel9cis_legacy_boot: true
+rhel9cis_legacy_boot: false
 
-rhel9cis_set_boot_pass: true
+rhel9cis_set_boot_pass: false
 
 # Section 1 is Initial setup (FileSystem Configuration, Configure Software Updates, Filesystem Integrity Checking, Secure Boot Settings,
 # Additional Process Hardening, Mandatory Access Control, Command Line Warning Banners, and GNOME Display Manager)
@@ -86,6 +88,7 @@ rhel9cis_rule_1_2_1_1: true
 rhel9cis_rule_1_2_1_2: true
 rhel9cis_rule_1_2_1_3: true
 rhel9cis_rule_1_2_1_4: true
+rhel9cis_enable_repogpg: true
 # Package updates
 rhel9cis_rule_1_2_2_1: true
 
@@ -138,7 +141,7 @@ rhel9cis_rule_1_8_8: true
 rhel9cis_rule_1_8_9: true
 rhel9cis_rule_1_8_10: true
 
-# Section 2 rules are controling Services (Special Purpose Services, and service clients)
+# Section 2 rules are controlling Services (Special Purpose Services, and service clients)
 ## Configure Server Services
 rhel9cis_rule_2_1_1: true
 rhel9cis_rule_2_1_2: true
@@ -278,9 +281,8 @@ rhel9cis_rule_5_3_3_2_4: true
 rhel9cis_rule_5_3_3_2_5: true
 rhel9cis_rule_5_3_3_2_6: true
 rhel9cis_rule_5_3_3_2_7: true
-rhel9cis_rule_5_3_3_2_8: true
 # 5.3.3.3 Configure pam_pwhistory module
-# This are added as part of 5.3.2.4 using jinja2 template
+# These are added as part of 5.3.2.4 using jinja2 template
 rhel9cis_rule_5_3_3_3_1: true
 rhel9cis_rule_5_3_3_3_2: true
 rhel9cis_rule_5_3_3_3_3: true
@@ -306,7 +308,7 @@ rhel9cis_rule_5_4_2_5: true
 rhel9cis_rule_5_4_2_6: true
 rhel9cis_rule_5_4_2_7: true
 rhel9cis_rule_5_4_2_8: true
-# 5.4.2 Configure user default environment
+# 5.4.3 Configure user default environment
 rhel9cis_rule_5_4_3_1: true
 rhel9cis_rule_5_4_3_2: true
 rhel9cis_rule_5_4_3_3: true
@@ -452,7 +454,7 @@ rhel9cis_message_server: false  # This is for messaging dovecot and cyrus-imap
 rhel9cis_message_mask: false
 rhel9cis_nfs_server: true
 rhel9cis_nfs_mask: true
-rhel9cis_nis_server: true  # set to mask if nis client required
+rhel9cis_nis_server: false  # set to mask if nis client required
 rhel9cis_nis_mask: false
 rhel9cis_print_server: false  # replaces cups
 rhel9cis_print_mask: false
@@ -522,7 +524,7 @@ rhel9cis_firewall: firewalld
 
 rhel9_cis_sshd_config_file: /etc/ssh/sshd_config
 
-## 5.1.7 Note the following to understand precedence and layout , comma seperated
+## 5.1.7 Note the following to understand precedence and layout, comma separated
 rhel9cis_sshd_allowusers: vagrant
 rhel9cis_sshd_allowgroups:
 rhel9cis_sshd_denyusers: nobody
@@ -531,7 +533,7 @@ rhel9cis_sshd_denygroups:
 ## 5.2.7 set sugroup if differs from wheel
 rhel9cis_sugroup: sugroup
 
-## 5.3.2.1 Enable automation to create custom profile settings, using the setings above
+## 5.3.2.1 Enable automation to create custom profile settings, using the settings above
 rhel9cis_authselect_custom_profile_create: false
 
 ## 5.3.2.1 Enable automation to select custom profile options, using the settings above
@@ -541,7 +543,7 @@ rhel9cis_authselect_custom_profile_select: false
 rhel9cis_authselect_custom_profile_name: mpg_cis
 
 ## 5.3.3.2.3 Set option used for password complexity
-# either mincall or credits - enabling to check for one option in settings
+# either minclass or credits - enabling to check for one option in settings
 rhel9cis_passwd_complex_option: minclass
 
 ## 5.4.1.x login.defs password settings
@@ -562,7 +564,7 @@ rhel9cis_aide_scan: cron
 ## change to rsyslog/ journald or other
 rhel9cis_syslog: journald
 
-# Control 6.2.3. x
+# Control 6.2.3.x
 ## Set if host is a logserver
 rhel9cis_remote_log_server: false
 
@@ -573,5 +575,5 @@ rhel9cis_remote_log_protocol: tcp
 rhel9cis_remote_log_retrycount: 100
 rhel9cis_remote_log_queuesize: 1000
 
-# Control 7.1.12
+# Control 7.1.12
 rhel9cis_exclude_unowned_search_path: \(! -path "/run/user/*" -a ! -path "/proc/*" -a ! -path "*/containerd/*" -a ! -path "*/kubelet/pods/*" -a ! -path "*/kubelet/plugins/*" -a ! -path "/sys/fs/cgroup/memory/*" -a ! -path "/var/*/private/*" \)

@@ -4,7 +4,7 @@
   {{ if .Vars.rhel9cis_rule_4_3_4 }}
 command:
   firewall_loopback_manual:
-    title: 4.3.4 | Ensure host based firewall loopback traffic is configured | Manual Check Required
+    title: 4.3.4 | Ensure nftables loopback traffic is configured | Manual Check Required
     exec: echo "Manual test"
     exit-status: 0
     stdout:
